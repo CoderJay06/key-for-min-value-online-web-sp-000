@@ -1,5 +1,7 @@
 # prereqs: iterators, hashes, conditional logic
 # Given a hash with numeric values, return the key for the smallest value
+# require 'benchmark'
+
 
 def key_for_min_value(name_hash)
   default = 1000 
@@ -18,8 +20,31 @@ def key_for_min_value(name_hash)
 end
 
 
+=begin
+iterations = 100_000 
 
+Benchmark.bm do |bm|
+  # joining an array of strings 
+  bm.report do 
+    iterations.times do 
+      ["The", "current", "time", "is", Time.now].join(" ")
+    end 
+  end
+  
+# using string interpolation 
+  bm.report do 
+    iterations.times do 
+      "The current time is #{Time.now}"
+    end
+  end 
+end 
 
+=end    
+
+  
+  
+  
+  
 
 
 
